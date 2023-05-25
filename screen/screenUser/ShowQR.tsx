@@ -70,7 +70,7 @@ export default function ShowQR(props: any) {
         <View
           style={{ alignItems: "center", backgroundColor: "white", padding: 10, borderRadius: 30 }}>
           <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.goBack()}>
-            <Icon name="left" type="ant-design" size={20} color={"#26E467"} />
+            <Icon name="chevron-left" type="entypo" size={20} color={"#26E467"} />
           </TouchableOpacity>
         </View>
         <Text
@@ -78,7 +78,7 @@ export default function ShowQR(props: any) {
             paddingVertical: 70,
             textAlign: "center",
             fontSize: 24,
-            fontWeight: "bold",
+            fontFamily: "Poppins_Bold",
             color: "white",
           }}>
           Tampilan QR

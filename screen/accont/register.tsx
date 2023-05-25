@@ -95,7 +95,6 @@ const Register = (props: any) => {
           </View>
           <View style={styles.viewRow}>
             <Icon name="google-classroom" type="material-community" size={25} color="#26E467" />
-
             <TextInput
               value={kelas}
               style={styles.textInput}
@@ -104,7 +103,6 @@ const Register = (props: any) => {
           </View>
           <View style={styles.viewRow}>
             <Icon name="school" type="ionicon" size={25} color="#26E467" />
-
             <TextInput
               value={prodi}
               style={styles.textInput}
@@ -113,18 +111,18 @@ const Register = (props: any) => {
           </View>
           <View style={styles.viewRow}>
             <Icon name="lock" type="material-community" size={25} color="#26E467" />
-
             <TextInput
               value={password}
+              secureTextEntry={true}
               style={styles.textInput}
               placeholder="Kata Sandi"
               onChangeText={handleTextPassword}></TextInput>
           </View>
           <View style={styles.viewRow}>
             <Icon name="lock" type="material-community" size={25} color="#26E467" />
-
             <TextInput
               value={confirmPassword}
+              secureTextEntry={true}
               style={styles.textInput}
               placeholder="Konfirmasi Kata Sandi"
               onChangeText={handleTextConfirmPassword}></TextInput>
@@ -144,12 +142,13 @@ export default Register;
 
 const styles = StyleSheet.create({
   textInput: {
-    fontSize: 16,
+    fontFamily: "Poppins_Regular",
+    flex: 1,
   },
   titleText: {
     color: "#FFFFFF",
     fontSize: 20,
-    fontWeight: "bold",
+    fontFamily: "Poppins_Bold",
   },
   button: {
     backgroundColor: "#26E467",
@@ -160,14 +159,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#FFFFFF",
     paddingHorizontal: 60,
-    paddingVertical: 12,
-    fontWeight: "bold",
+    paddingVertical: 8,
+    fontFamily: "Poppins_Bold",
   },
   viewRow: {
-    borderBottomWidth: 1,
+    paddingVertical: 2,
+    borderBottomWidth: 0.5,
     borderBottomColor: "#000000",
     flexDirection: "row",
-    gap: 4,
+    gap: 8,
     alignItems: "center",
   },
   viewForm: {

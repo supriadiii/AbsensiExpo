@@ -59,7 +59,7 @@ const ScanAbsensi = () => {
         {scanned && <Button title="Tap to Scan Again" onPress={() => setScanned(false)} />}
       </View>
       <TouchableOpacity style={styles.button} onPress={(e: any) => handleSubmit(e)}>
-        <Text style={styles.buttonText}>SUBMIT</Text>
+        <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
     </View>
   );
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 24,
     textAlign: "center",
-    fontWeight: "bold",
+    fontFamily: "Poppins_Bold",
   },
 });
 

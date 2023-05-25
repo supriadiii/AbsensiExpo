@@ -28,27 +28,27 @@ const AddAbsensi = (props: any) => {
       <View style={styles.viewForm}>
         <View style={{ gap: 20 }}>
           <View style={styles.viewRow}>
-            <Icon name="ios-person-circle" type="ionicon" size={25} color="#26E467" />
+            <Icon name="md-newspaper-outline" type="ionicon" size={25} color="#26E467" />
             <TextInput
               value={mataKuliah}
               style={styles.textInput}
-              placeholder="Nama Mahasiswa"
+              placeholder="Mata Kuliah"
               onChangeText={(value) => setMataKuliah(value)}></TextInput>
           </View>
           <View style={styles.viewRow}>
-            <Icon name="id-card-o" type="font-awesome" size={20} color="#26E467" />
+            <Icon name="calendar" type="feather" size={25} color="#26E467" />
             <TextInput
               value={tanggal}
               style={styles.textInput}
-              placeholder="Nomor Induk Mahasiswa"
+              placeholder="Tanggal"
               onChangeText={(value) => setTanggal(value)}></TextInput>
           </View>
           <View style={styles.viewRow}>
-            <Icon name="google-classroom" type="material-community" size={25} color="#26E467" />
+            <Icon name="clock" type="feather" size={25} color="#26E467" />
             <TextInput
               value={jam}
               style={styles.textInput}
-              placeholder="Kelas"
+              placeholder="Jam"
               onChangeText={(value) => setJam(value)}></TextInput>
           </View>
           <View style={styles.viewRow}>
@@ -80,13 +80,13 @@ export default AddAbsensi;
 
 const styles = StyleSheet.create({
   textInput: {
-    fontSize: 16,
+    fontFamily: "Poppins_Regular",
     flex: 1,
   },
   titleText: {
     color: "#FFFFFF",
     fontSize: 20,
-    fontWeight: "bold",
+    fontFamily: "Poppins_Bold",
   },
   button: {
     backgroundColor: "#26E467",
@@ -97,14 +97,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#FFFFFF",
     paddingHorizontal: 60,
-    paddingVertical: 12,
-    fontWeight: "bold",
+    paddingVertical: 8,
+    fontFamily: "Poppins_Bold",
   },
   viewRow: {
-    borderBottomWidth: 1,
+    paddingVertical: 2,
+    borderBottomWidth: 0.5,
     borderBottomColor: "#000000",
     flexDirection: "row",
-    gap: 4,
+    gap: 8,
     alignItems: "center",
   },
   viewForm: {
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   },
   titleBar: {
     flexDirection: "row",
-    gap: 20,
+    gap: 12,
     backgroundColor: "#26E467",
     paddingHorizontal: 16,
     paddingTop: 52,

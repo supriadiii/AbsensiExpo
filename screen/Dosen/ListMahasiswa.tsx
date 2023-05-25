@@ -12,10 +12,10 @@ const ListMahasiswa = (props: any) => {
     try {
       axios
         .get("https://sheet.best/api/sheets/b06d6084-9463-4cf5-905e-c0e72c704d37")
-        .then((response) => {
+        .then((response: any) => {
           setData(response.data);
         })
-        .catch((error) => {
+        .catch((error: any) => {
           console.error(error);
         });
     } catch (error) {
@@ -46,21 +46,19 @@ const ListMahasiswa = (props: any) => {
               color="#FFFFFF"
               onPress={() => props.navigation.navigate("ListAbsensi")}
             />
-            <Text style={{ fontSize: 16, color: "#FFFFFF", fontWeight: "bold" }}>
-              Status Absensi Mahasiswa
-            </Text>
+            <Text style={styles.titleText}>Status Absensi Mahasiswa</Text>
           </View>
           <View style={styles.viewForm}>
             {data.map((item: any, index: number) => (
               <View key={index} style={styles.viewMahasiswa}>
                 <Text style={styles.textProdi}>{item.prodiLocal}</Text>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                  <Text>{item.nameLocal}</Text>
-                  <Text>{item.nimLocal}</Text>
+                  <Text style={styles.textNormal}>{item.nameLocal}</Text>
+                  <Text style={styles.textNormal}>{item.nimLocal}</Text>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                  <Text>{item.kelasLocal}</Text>
-                  <Text>{formatDateTime(item.createDate)}</Text>
+                  <Text style={styles.textNormal}>{item.kelasLocal}</Text>
+                  <Text style={styles.textNormal}>{formatDateTime(item.createDate)}</Text>
                 </View>
                 <TouchableOpacity style={styles.buttonViewAbsen}>
                   <Text style={styles.textViewAbsen}>Hadir</Text>
@@ -81,10 +79,18 @@ const ListMahasiswa = (props: any) => {
 export default ListMahasiswa;
 
 const styles = StyleSheet.create({
+  textNormal: {
+    fontFamily: "Poppins_Regular",
+  },
+  titleText: {
+    color: "#FFFFFF",
+    fontSize: 20,
+    fontFamily: "Poppins_Bold",
+  },
   textViewAbsen: {
     color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontFamily: "Poppins_Bold",
   },
   buttonViewAbsen: {
     alignItems: "center",
@@ -94,8 +100,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   textProdi: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontFamily: "Poppins_Bold",
   },
   viewMahasiswa: {
     backgroundColor: "#FBFBFB",
@@ -111,7 +117,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 56,
     paddingBottom: 20,
   },
   layoutView: {
@@ -130,7 +136,6 @@ const styles = StyleSheet.create({
     gap: 24,
   },
   ScrollStyle: {
-    paddingVertical: 25,
     paddingBottom: 20,
   },
 });
