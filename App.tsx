@@ -5,11 +5,14 @@ import { StyleSheet, View } from "react-native";
 
 import AddAbsensi from "./screen/Dosen/AddAbsensi";
 import HomeDosen from "./screen/Dosen/HomeDosen";
+import ListAbsensi from "./screen/Dosen/ListAbsensi";
+import ListMahasiswa from "./screen/Dosen/ListMahasiswa";
 import Home from "./screen/Home";
 import TabNavigation from "./screen/TabNavigation";
 import Login from "./screen/accont/Login";
 import Register from "./screen/accont/register";
 import ShowQR from "./screen/screenUser/ShowQR";
+import StatusAbsensi from "./screen/screenUser/StatusAbsensi";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -25,6 +28,9 @@ export default function App() {
           <Stack.Screen name="ShowQR" component={ShowQR} />
           <Stack.Screen name="HomeDosen" component={HomeDosen} />
           <Stack.Screen name="AddAbsensi" component={AddAbsensi} />
+          <Stack.Screen name="ListAbsensi" component={ListAbsensi} />
+          <Stack.Screen name="ListMahasiswa" component={ListMahasiswa} />
+          <Stack.Screen name="StatusAbsensi" component={StatusAbsensi} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

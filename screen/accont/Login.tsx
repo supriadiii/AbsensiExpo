@@ -47,7 +47,7 @@ const Login = (props: any) => {
   };
   const handleLogin = () => {
     if (nim === dataLocal.nimLocal && password === passwordLocal) {
-      props.navigation.replace("Home", { dataLocal });
+      props.navigation.replace("HomeDosen", { dataLocal });
     } else {
       alert("Maaf password kamu salah ");
     }

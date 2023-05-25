@@ -88,7 +88,9 @@ const Home = (props: any) => {
           </View>
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>Simpan PDF</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ButtonMahasiswa}>
+        <TouchableOpacity
+          style={styles.ButtonMahasiswa}
+          onPress={() => props.navigation.navigate("StatusAbsensi")}>
           <View style={{ marginRight: 15 }}>
             <Image source={require("../assets/iconSstatus.png")} />
           </View>
