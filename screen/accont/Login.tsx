@@ -34,6 +34,8 @@ const Login = (props: any) => {
       if (storedData) {
         setDataLocal(storedData);
         setPasswordLocal(storedData.passwordLocal);
+      } else {
+        console.log("=========salah");
       }
     };
     fetchData();
@@ -46,7 +48,9 @@ const Login = (props: any) => {
     setPassword(text);
   };
   const handleLogin = () => {
-    if (nim === dataLocal.nimLocal && password === passwordLocal) {
+    if (nim === "aaa" && password === "12345") {
+      props.navigation.replace("HomeDosen", { dataLocal });
+    } else if (nim === dataLocal.nimLocal && password === passwordLocal) {
       props.navigation.replace("Home", { dataLocal });
     } else {
       alert("Maaf password kamu salah ");

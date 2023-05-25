@@ -9,7 +9,7 @@ const AddAbsensi = () => {
   const [kelas, setKelas] = useState("");
   const [prodi, setProdi] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (props: any) => {
     console.log({ mataKuliah, tanggal, jam, kelas, prodi });
   };
 
