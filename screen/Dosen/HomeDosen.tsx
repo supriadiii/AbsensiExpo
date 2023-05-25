@@ -22,7 +22,7 @@ const HomeDosen = (props: any) => {
             />
             <Text style={styles.textButton}>Scan Absensi</Text>
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => props.navigation.navigate("AddAbsensi")}>
             <Image
@@ -30,7 +30,7 @@ const HomeDosen = (props: any) => {
               source={require("../../assets/scanButton.png")}
             />
             <Text style={styles.textButton}>Tambah Absensi</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => props.navigation.navigate("ListAbsensi")}>

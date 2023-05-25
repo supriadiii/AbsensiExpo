@@ -73,10 +73,10 @@ const StatusAbsensi = (props: any) => {
                 <View key={index} style={styles.viewMahasiswa}>
                   <Text style={styles.textMataKuliah}>Daftar kehadiran</Text>
                   <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                    <Text>{item.kelasLocal}</Text>
-                    <Text>{formatDateTime(item.createDate)}</Text>
+                    <Text style={styles.textNormal}>{item.kelasLocal}</Text>
+                    <Text style={styles.textNormal}>{formatDateTime(item.createDate)}</Text>
                   </View>
-                  <Text>{item.prodiLocal}</Text>
+                  <Text style={styles.textNormal}>{item.prodiLocal}</Text>
                   <TouchableOpacity style={styles.buttonViewAbsen}>
                     <Text style={styles.textViewAbsen}>Hadir</Text>
                   </TouchableOpacity>
@@ -154,9 +154,6 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
     width: "100%",
   },
 });
