@@ -9,6 +9,7 @@ import AddAbsensi from "./screen/Dosen/AddAbsensi";
 import HomeDosen from "./screen/Dosen/HomeDosen";
 import ListAbsensi from "./screen/Dosen/ListAbsensi";
 import ListMahasiswa from "./screen/Dosen/ListMahasiswa";
+import ScanAbsensi from "./screen/Dosen/ScanAbsensi";
 import Home from "./screen/Home";
 import TabNavigation from "./screen/TabNavigation";
 import Login from "./screen/accont/Login";
@@ -66,6 +67,7 @@ export default function App() {
           <Stack.Screen name="ListAbsensi" component={ListAbsensi} />
           <Stack.Screen name="ListMahasiswa" component={ListMahasiswa} />
           <Stack.Screen name="StatusAbsensi" component={StatusAbsensi} />
+          <Stack.Screen name="ScanAbsensi" component={ScanAbsensi} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

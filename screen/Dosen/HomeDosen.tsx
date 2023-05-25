@@ -13,7 +13,9 @@ const HomeDosen = (props: any) => {
           <Image source={require("../../assets/scanmenu.png")} />
         </View>
         <View style={styles.buttonView}>
-          <TouchableOpacity style={styles.buttonStyle}>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            onPress={() => props.navigation.navigate("ScanAbsensi")}>
             <Image
               style={{ height: 20, width: 60 }}
               source={require("../../assets/scanButton.png")}
