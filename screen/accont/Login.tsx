@@ -90,6 +90,7 @@ const Login = (props: any) => {
             />
             <TextInput
               style={styles.input}
+              secureTextEntry={true}
               placeholder="Password"
               value={password}
               onChangeText={handlePasswordChange}
@@ -98,11 +99,10 @@ const Login = (props: any) => {
               <Text
                 style={{
                   color: "#FFFFFF",
-                  fontSize: 24,
-                  textAlign: "center",
-                  fontWeight: "bold",
+                  fontSize: 20,
+                  fontFamily: "Poppins_Bold",
                 }}>
-                LOGIN
+                Login
               </Text>
             </TouchableOpacity>
             <View style={styles.registerContainer}>
@@ -137,29 +137,27 @@ const styles = StyleSheet.create({
     // Styling untuk Image kedua
   },
   input: {
-    height: 36,
-    width: 240,
-    margin: 12,
+    width: "100%",
     borderBottomWidth: 1,
     borderBottomColor: "#26E467",
-    padding: 10,
     textAlign: "center",
+    fontFamily: "Poppins_Regular",
   },
   countainerInput: {
     color: "#C0C",
-    // backgroundColor:"red",
-    marginTop: 50,
+    paddingHorizontal: 50,
     alignItems: "center",
+    paddingVertical: 50,
+    gap: 24,
   },
   button: {
+    width: "100%",
     backgroundColor: "#26E467",
     paddingHorizontal: 25,
-    paddingVertical: 12,
+    paddingVertical: 8,
     borderRadius: 10,
-    width: 240,
-    height: 48,
-    marginTop: 10,
     justifyContent: "center",
+    alignItems: "center",
   },
   registerContainer: {
     flexDirection: "row",
@@ -168,16 +166,12 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
     alignSelf: "center",
   },
-  registerText: {},
-  registerButton: {
-    backgroundColor: "yellow",
-    marginLeft: 5,
-    paddingHorizontal: 5,
-    paddingVertical: 2,
-    borderRadius: 4,
+  registerText: {
+    fontFamily: "Poppins_Regular",
   },
   registerButtonText: {
-    color: "#FF0000",
+    fontFamily: "Poppins_Regular",
+    color: "#26E467",
   },
 });
 

@@ -95,10 +95,18 @@ const StatusAbsensi = (props: any) => {
 };
 
 const styles = StyleSheet.create({
+  textNormal: {
+    fontFamily: "Poppins_Regular",
+  },
+  titleText: {
+    fontSize: 20,
+    color: "#FFFFFF",
+    fontFamily: "Poppins_Bold",
+  },
   textViewAbsen: {
     color: "#FFFFFF",
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "Poppins_Bold",
   },
   buttonViewAbsen: {
     alignItems: "center",
@@ -109,7 +117,7 @@ const styles = StyleSheet.create({
   },
   textMataKuliah: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontFamily: "Poppins_Bold",
   },
   viewMahasiswa: {
     backgroundColor: "#FBFBFB",
@@ -125,7 +133,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 56,
     paddingBottom: 20,
   },
   layoutView: {

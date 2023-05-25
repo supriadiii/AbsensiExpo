@@ -13,16 +13,16 @@ const ListAbsensi = (props: any) => {
           color="#FFFFFF"
           onPress={() => props.navigation.navigate("HomeDosen")}
         />
-        <Text style={{ fontSize: 16, color: "#FFFFFF", fontWeight: "bold" }}>Daftar Absensi</Text>
+        <Text style={styles.textTitle}>Daftar Absensi</Text>
       </View>
       <View style={styles.viewForm}>
         <View style={styles.viewKelas}>
           <Text style={styles.textMataKuliah}>Mata Kuliah</Text>
           <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-            <Text>Kelas</Text>
-            <Text>2023-10-10,08.00</Text>
+            <Text style={styles.textNormal}>Kelas</Text>
+            <Text style={styles.textNormal}>2023-10-10,08.00</Text>
           </View>
-          <Text>Pendidikan Teknologi Informatika dan Komputer</Text>
+          <Text style={styles.textNormal}>Pendidikan Teknologi Informatika dan Komputer</Text>
           <TouchableOpacity
             style={styles.buttonViewAbsen}
             onPress={() => props.navigation.navigate("ListMahasiswa")}>
@@ -37,10 +37,18 @@ const ListAbsensi = (props: any) => {
 export default ListAbsensi;
 
 const styles = StyleSheet.create({
+  textNormal: {
+    fontFamily: "Poppins_Regular",
+  },
+  textTitle: {
+    fontSize: 20,
+    color: "#FFFFFF",
+    fontFamily: "Poppins_Bold",
+  },
   textViewAbsen: {
     color: "#FFFFFF",
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "Poppins_Bold",
   },
   buttonViewAbsen: {
     alignItems: "center",
@@ -51,7 +59,7 @@ const styles = StyleSheet.create({
   },
   textMataKuliah: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontFamily: "Poppins_Bold",
   },
   viewKelas: {
     backgroundColor: "#FBFBFB",
@@ -67,7 +75,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 56,
     paddingBottom: 20,
   },
   layoutView: {

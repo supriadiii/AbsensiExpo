@@ -6,7 +6,7 @@ const HomeDosen = (props: any) => {
     <View style={styles.layoutView}>
       <View style={styles.rowTitleBar}>
         <Image source={require("../../assets/iconqrsmall.png")} />
-        <Text style={{ fontSize: 16, color: "#FFFFFF", fontWeight: "bold" }}>Home</Text>
+        <Text style={styles.titleText}>Home</Text>
       </View>
       <View style={styles.imageView}>
         <View style={{}}>
@@ -49,13 +49,18 @@ const HomeDosen = (props: any) => {
 export default HomeDosen;
 
 const styles = StyleSheet.create({
-  textButton: {
+  titleText: {
     fontSize: 20,
-    fontWeight: "bold",
+    color: "#FFFFFF",
+    fontFamily: "Poppins_Bold",
+  },
+  textButton: {
+    fontSize: 18,
+    fontFamily: "Poppins_Bold",
   },
   buttonStyle: {
     backgroundColor: "#E6E6E6",
-    paddingVertical: 32,
+    paddingVertical: 20,
     paddingHorizontal: 20,
     borderRadius: 15,
     flexDirection: "row",
@@ -80,7 +85,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 56,
     paddingBottom: 20,
   },
   layoutView: {
