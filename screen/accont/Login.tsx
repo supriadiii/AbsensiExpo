@@ -24,7 +24,7 @@ const Login = (props: any) => {
   };
   const handleLogin = () => {
     if (nim === "5202451003" && password === "kapantamat") {
-      props.navigation.navigate("Home", { password, nim });
+      props.navigation.navigate("HomeDosen", { password, nim });
     } else if (password !== "kapantamat") {
       alert("Maaf password kamu salah ");
     }
