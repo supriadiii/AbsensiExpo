@@ -48,12 +48,14 @@ const StatusAbsensi = (props: any) => {
 
     return `${formattedDate}, ${formattedTime}`;
   };
-  console.log("dataLocal", dataLocal);
-  console.log("data", data);
+
+  const filteredData = data
+    ? data.filter((item: any) => item.nimLocal === dataLocal.nimLocal)
+    : data;
 
   return (
     <View style={styles.container}>
-      {data.length > 0 ? (
+      {filteredData.length > 0 ? (
         <ScrollView>
           <View style={styles.layoutView}>
             <View style={styles.rowTitleBar}>
@@ -69,7 +71,7 @@ const StatusAbsensi = (props: any) => {
               </Text>
             </View>
             <View style={styles.viewForm}>
-              {data.map((item: any, index: number) => (
+              {filteredData.map((item: any, index: number) => (
                 <View key={index} style={styles.viewMahasiswa}>
                   <Text style={styles.textMataKuliah}>Daftar kehadiran</Text>
                   <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
@@ -91,8 +93,6 @@ const StatusAbsensi = (props: any) => {
     </View>
   );
 };
-
-export default StatusAbsensi;
 
 const styles = StyleSheet.create({
   textViewAbsen: {
@@ -152,3 +152,5 @@ const styles = StyleSheet.create({
     width: "100%",
   },
 });
+
+export default StatusAbsensi;
