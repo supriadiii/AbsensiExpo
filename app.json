@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#26E467"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -31,6 +29,14 @@
       "eas": {
         "projectId": "301c0b70-a4b8-4edc-b97c-b1902b8c7cd2"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
+    ]
   }
 }

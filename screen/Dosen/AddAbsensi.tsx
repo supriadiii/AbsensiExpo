@@ -1,16 +1,16 @@
 import { Icon } from "@rneui/base";
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, Image, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from "react-native";
 
-const AddAbsensi = () => {
+const AddAbsensi = (props: any) => {
   const [mataKuliah, setMataKuliah] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [jam, setJam] = useState("");
   const [kelas, setKelas] = useState("");
   const [prodi, setProdi] = useState("");
 
-  const handleSubmit = (props: any) => {
-    console.log({ mataKuliah, tanggal, jam, kelas, prodi });
+  const handleSubmit = () => {
+    props.navigation.navigate("ListAbsensi");
   };
 
   return (
@@ -21,7 +21,7 @@ const AddAbsensi = () => {
           type="entypo"
           size={25}
           color="#FFFFFF"
-          onPress={() => props.avigation.navigate("HomeDosen")}
+          onPress={() => props.navigation.navigate("HomeDosen")}
         />
         <Text style={styles.titleText}>Tambah Absensi</Text>
       </View>
