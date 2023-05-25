@@ -1,8 +1,57 @@
-import React, { useState } from "react";
+import * as FileSystem from "expo-file-system";
+import * as Print from "expo-print";
+import * as SecureStore from "expo-secure-store";
+import React, { useState, useEffect } from "react";
 import { TouchableOpacity, StyleSheet, Image, View, Text } from "react-native";
 
+import { getDataFromStorage } from "../core/const/serviceScantime";
+
 const Home = (props: any) => {
-  const [nim] = useState<any>();
+  const [dataLocal, setDataLocal] = useState<any>({
+    nameLocal: undefined,
+    nimLocal: undefined,
+    kelasLocal: undefined,
+    prodiLocal: undefined,
+  });
+  const [passwordLocal, setPasswordLocal] = useState<any>();
+  const [dataUri, setDataUri] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const storedData = await getDataFromStorage();
+      console.log("=============", storedData);
+      if (storedData) {
+        setDataLocal(storedData);
+        setPasswordLocal(storedData.passwordLocal);
+      }
+    };
+    fetchData();
+    GetUri();
+  }, []);
+
+  const GetUri = async () => {
+    try {
+      const dataUri = await SecureStore.getItemAsync("qrcodeUri");
+      if (dataUri) {
+        setDataUri(dataUri);
+      }
+    } catch (e) {
+      console.log("Error: ", e);
+    }
+  };
+
+  const handleSavePDF = async () => {
+    if (dataUri) {
+      const pdfUri = `${FileSystem.cacheDirectory}qrcode.pdf`;
+      await FileSystem.copyAsync({
+        from: dataUri,
+        to: pdfUri,
+      });
+      console.log("PDF saved", pdfUri);
+    } else {
+      console.log("No PDF URI available");
+    }
+  };
 
   console.log({ props });
   return (
@@ -22,18 +71,18 @@ const Home = (props: any) => {
       </View>
       <View style={styles.countainerAction}>
         <Image style={{ margin: 20, marginTop: 30 }} source={require("../assets/FotoProfil.png")} />
-        <Text style={styles.TextStyle}>Supriadi</Text>
-        <Text style={styles.TextStyle}>{nim}</Text>
+        <Text style={styles.TextStyle}>{dataLocal.nameLocal}</Text>
+        <Text style={styles.TextStyle}>{dataLocal.nimLocal}</Text>
         <Text style={styles.TextStyle}>PTIK A 2020</Text>
         <TouchableOpacity
           style={styles.ButtonMahasiswa}
-          onPress={() => props.navigation.navigate("ShowQR", { nim })}>
+          onPress={() => props.navigation.navigate("ShowQR")}>
           <View style={{ marginRight: 15 }}>
             <Image source={require("../assets/iconqr.png")} />
           </View>
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>Tampilkan QrCode</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ButtonMahasiswa}>
+        <TouchableOpacity style={styles.ButtonMahasiswa} onPress={handleSavePDF}>
           <View style={{ marginRight: 15 }}>
             <Image source={require("../assets/PDF.png")} />
           </View>
