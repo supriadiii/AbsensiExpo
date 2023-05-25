@@ -13,9 +13,7 @@ const StatusAbsensi = (props: any) => {
           color="#FFFFFF"
           onPress={() => props.navigation.navigate("Home")}
         />
-        <Text style={{ fontSize: 16, color: "#FFFFFF", fontWeight: "bold" }}>
-          Daftar Absensi
-        </Text>
+        <Text style={{ fontSize: 16, color: "#FFFFFF", fontWeight: "bold" }}>Daftar Absensi</Text>
       </View>
       <View style={styles.viewForm}>
         <View style={styles.viewMahasiswa}>

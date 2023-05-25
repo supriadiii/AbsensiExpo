@@ -96,7 +96,7 @@ const Login = (props: any) => {
                   color: "#FFFFFF",
                   fontSize: 24,
                   textAlign: "center",
-                  fontWeight: "bold",
+                  fontFamily: "Poppins_Bold",
                 }}>
                 LOGIN
               </Text>

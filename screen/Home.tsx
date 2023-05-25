@@ -40,19 +40,6 @@ const Home = (props: any) => {
     }
   };
 
-  const handleSavePDF = async () => {
-    if (dataUri) {
-      const pdfUri = `${FileSystem.cacheDirectory}qrcode.pdf`;
-      await FileSystem.copyAsync({
-        from: dataUri,
-        to: pdfUri,
-      });
-      console.log("PDF saved", pdfUri);
-    } else {
-      console.log("No PDF URI available");
-    }
-  };
-
   console.log({ props });
   return (
     <>
@@ -81,12 +68,6 @@ const Home = (props: any) => {
             <Image source={require("../assets/iconqr.png")} />
           </View>
           <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>Tampilkan QrCode</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.ButtonMahasiswa} onPress={handleSavePDF}>
-          <View style={{ marginRight: 15 }}>
-            <Image source={require("../assets/PDF.png")} />
-          </View>
-          <Text style={{ color: "white", fontWeight: "bold", fontSize: 20 }}>Simpan PDF</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.ButtonMahasiswa}
