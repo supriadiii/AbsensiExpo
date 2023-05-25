@@ -56,7 +56,7 @@ const StatusAbsensi = (props: any) => {
   return (
     <View style={styles.container}>
       {filteredData.length > 0 ? (
-        <ScrollView>
+        <ScrollView style={{ width: "100%", height: "100%" }}>
           <View style={styles.layoutView}>
             <View style={styles.rowTitleBar}>
               <Icon
