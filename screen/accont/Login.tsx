@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import * as SecureStore from "expo-secure-store";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   View,
   Text,
@@ -12,9 +13,31 @@ import {
   Platform,
 } from "react-native";
 
+import { getDataFromStorage } from "../../core/const/serviceScantime";
+
 const Login = (props: any) => {
-  const [nim, setNim] = useState("");
-  const [password, setPassword] = useState("");
+  const [nim, setNim] = useState<any>();
+  const [password, setPassword] = useState<any>();
+  const [dataLocal, setDataLocal] = useState<any>({
+    nameLocal: undefined,
+    nimLocal: undefined,
+    kelasLocal: undefined,
+    prodiLocal: undefined,
+  });
+  const [passwordLocal, setPasswordLocal] = useState<any>();
+  // memanggil data local storege
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const storedData = await getDataFromStorage();
+      console.log("=============", storedData);
+      if (storedData) {
+        setDataLocal(storedData);
+        setPasswordLocal(storedData.passwordLocal);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleNimChange = (text: string) => {
     setNim(text);
@@ -23,13 +46,18 @@ const Login = (props: any) => {
     setPassword(text);
   };
   const handleLogin = () => {
-    if (nim === "5202451003" && password === "kapantamat") {
-      props.navigation.navigate("Home", { password, nim });
-    } else if (password !== "kapantamat") {
+    if (nim === dataLocal.nimLocal && password === passwordLocal) {
+      props.navigation.replace("Home", { dataLocal });
+    } else {
       alert("Maaf password kamu salah ");
     }
   };
-  console.log(nim);
+  console.log("ini data local", { dataLocal });
+  console.log("ini data local password ===", { passwordLocal });
+  console.log("ini password ===", { password });
+  console.log("ini nim ===", dataLocal.nimLocal);
+  console.log("ini nim ===", dataLocal.nimLocal);
+  console.log("ini ===", nim);
   console.log(props);
   return (
     <ScrollView>

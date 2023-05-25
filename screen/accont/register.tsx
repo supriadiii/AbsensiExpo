@@ -1,14 +1,30 @@
 import { Icon } from "@rneui/base";
+import * as SecureStore from "expo-secure-store";
 import React, { useState } from "react";
 import { Image, TouchableOpacity, TextInput, StyleSheet, View, Text } from "react-native";
-
 const Register = (props: any) => {
-  const [name, setName] = useState("");
-  const [nim, setNim] = useState("");
-  const [kelas, setKelas] = useState("");
-  const [prodi, setProdi] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState<any>();
+  const [nim, setNim] = useState<any>();
+  const [kelas, setKelas] = useState<any>();
+  const [prodi, setProdi] = useState<any>();
+  const [password, setPassword] = useState<any>();
+  const [confirmPassword, setConfirmPassword] = useState<any>();
+
+  //save ke local storege
+  const saveDataToStorage = async () => {
+    try {
+      await SecureStore.setItemAsync("name", name);
+      await SecureStore.setItemAsync("nim", nim);
+      await SecureStore.setItemAsync("kelas", kelas);
+      await SecureStore.setItemAsync("prodi", prodi);
+      await SecureStore.setItemAsync("password", password);
+      await SecureStore.setItemAsync("confirmPassword", confirmPassword);
+
+      console.log("Data saved to local storage");
+    } catch (error) {
+      console.log("Error saving data to local storage:", error);
+    }
+  };
 
   const handleTextName = (text: string) => {
     setName(text);
@@ -30,13 +46,25 @@ const Register = (props: any) => {
   };
 
   const handleDaftar = () => {
-    props.navigation.navigate("Login", {
-      name,
-      nim,
-      kelas,
-      prodi,
-      password,
-    });
+    if (password !== confirmPassword) {
+      alert("Konfirmasi password salah");
+    } else if (
+      name !== undefined &&
+      nim !== undefined &&
+      kelas !== undefined &&
+      password !== undefined
+    ) {
+      props.navigation.navigate("Login", {
+        name,
+        nim,
+        kelas,
+        prodi,
+        password,
+      });
+      saveDataToStorage();
+    } else {
+      alert("Masukkan data dengan benar");
+    }
   };
 
   console.log({ name, nim, kelas, prodi, password, confirmPassword });
