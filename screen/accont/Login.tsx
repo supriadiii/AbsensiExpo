@@ -75,7 +75,7 @@ const Login = (props: any) => {
             </TouchableOpacity>
             <View style={styles.registerContainer}>
               <Text style={styles.registerText}>Belum memiliki akun? </Text>
-              <TouchableOpacity onPress={() => props.navigation.navigate("Register")}>
+              <TouchableOpacity onPress={() => props.navigation.navigate("TabNavigation")}>
                 <Text style={styles.registerButtonText}>Daftar</Text>
               </TouchableOpacity>
             </View>
