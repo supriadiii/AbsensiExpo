@@ -32,30 +32,13 @@ export default function ShowQR(props: any) {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    if (dataLocal && !qrCodeCaptured) {
-      saveQRCode();
-    }
-  }, [dataLocal]);
+  // useEffect(() => {
+  //   if (dataLocal && !qrCodeCaptured) {
+  //     saveQRCode();
+  //   }
+  // }, [dataLocal]);
 
-  const saveQRCode = async () => {
-    const qrCodeCapture = await captureRef(dataLocalRef.current!, {
-      format: "png",
-      quality: 1,
-    });
-
-    const fileUri = `${FileSystem.documentDirectory}qrcode.png`;
-    await FileSystem.copyAsync({
-      from: qrCodeCapture,
-      to: fileUri,
-    });
-
-    await SecureStore.setItemAsync("qrcodeUri", fileUri);
-    setUri(fileUri);
-    console.log("QR code data saved", fileUri);
-    setQRCodeCaptured(true);
-  };
-
+  console.log("====", dataLocal);
   return (
     <View>
       <View
@@ -92,7 +75,6 @@ export default function ShowQR(props: any) {
           />
         </View>
         <View
-          ref={dataLocalRef}
           style={{
             flex: 1,
             paddingBottom: 200,
