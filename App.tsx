@@ -7,6 +7,7 @@ import Home from "./screen/Home";
 import TabNavigation from "./screen/TabNavigation";
 import Login from "./screen/accont/Login";
 import Register from "./screen/accont/Register";
+import ShowQR from "./screen/screenUser/ShowQR";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ export default function App() {
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="TabNavigation" component={TabNavigation} />
+          <Stack.Screen name="ShowQR" component={ShowQR} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
