@@ -128,13 +128,11 @@ const style = StyleSheet.create({
   },
   textFocus: {
     paddingTop: 4,
-    fontFamily: "Montserrat-Regular",
     fontSize: 8,
     color: "#26E467",
   },
   textNoFocus: {
     paddingTop: 4,
-    fontFamily: "Montserrat-Regular",
     fontSize: 8,
     color: "#D6D6D6",
   },

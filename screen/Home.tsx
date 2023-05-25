@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TouchableOpacity, StyleSheet, Image, View, Text } from "react-native";
 
 const Home = (props: any) => {
-  const [nim] = useState<any>(props.route.params.nim);
+  const [nim] = useState<any>();
 
   console.log({ props });
   return (

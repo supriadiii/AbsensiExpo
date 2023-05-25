@@ -6,7 +6,7 @@ import { StyleSheet, View } from "react-native";
 import Home from "./screen/Home";
 import TabNavigation from "./screen/TabNavigation";
 import Login from "./screen/accont/Login";
-import Register from "./screen/accont/Register";
+import Register from "./screen/accont/register";
 import ShowQR from "./screen/screenUser/ShowQR";
 
 export default function App() {

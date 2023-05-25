@@ -30,7 +30,7 @@ const Login = (props: any) => {
     }
   };
   console.log(nim);
-  console.log(password);
+  console.log(props);
   return (
     <ScrollView>
       <KeyboardAvoidingView
@@ -75,7 +75,7 @@ const Login = (props: any) => {
             </TouchableOpacity>
             <View style={styles.registerContainer}>
               <Text style={styles.registerText}>Belum memiliki akun? </Text>
-              <TouchableOpacity onPress={() => props.navigation.navigate("TabNavigation")}>
+              <TouchableOpacity onPress={() => props.navigation.navigate("Register")}>
                 <Text style={styles.registerButtonText}>Daftar</Text>
               </TouchableOpacity>
             </View>
